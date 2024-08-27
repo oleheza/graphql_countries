@@ -1,4 +1,4 @@
-package ua.oldev.graphqlcountries.ui.theme
+package ua.oldev.graphqlcountries.core.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
