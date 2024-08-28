@@ -1,4 +1,4 @@
-package ua.oldev.graphqlcountries.countries.list.components
+package ua.oldev.graphqlcountries.countries.presentation.list.components
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.ListItem
@@ -8,9 +8,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import ua.oldev.graphqlcountries.core.domain.model.CountryListModel
 import ua.oldev.graphqlcountries.core.presentation.theme.GraphQlCountriesTheme
 import ua.oldev.graphqlcountries.core.presentation.ukraine
+import ua.oldev.graphqlcountries.countries.domain.model.CountryListModel
 
 @Composable
 fun CountriesListItem(modifier: Modifier = Modifier, country: CountryListModel) {

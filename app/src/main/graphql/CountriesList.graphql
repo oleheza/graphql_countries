@@ -1,5 +1,5 @@
-query CountriesList {
-    countries {
+query CountriesList($filter: CountryFilterInput) {
+    countries(filter: $filter) {
         code
         name
         emoji

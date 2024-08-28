@@ -1,6 +1,6 @@
 package ua.oldev.graphqlcountries.core.presentation
 
-import ua.oldev.graphqlcountries.core.domain.model.CountryListModel
+import ua.oldev.graphqlcountries.countries.domain.model.CountryListModel
 
 val ukraine = CountryListModel(
     code = "UA",

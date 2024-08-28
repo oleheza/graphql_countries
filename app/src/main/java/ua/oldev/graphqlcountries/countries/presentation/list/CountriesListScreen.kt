@@ -1,4 +1,4 @@
-package ua.oldev.graphqlcountries.countries.list
+package ua.oldev.graphqlcountries.countries.presentation.list
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
@@ -8,24 +8,27 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import ua.oldev.graphqlcountries.R
 import ua.oldev.graphqlcountries.core.presentation.allCountries
 import ua.oldev.graphqlcountries.core.presentation.components.CenteredProgressIndicator
 import ua.oldev.graphqlcountries.core.presentation.theme.GraphQlCountriesTheme
-import ua.oldev.graphqlcountries.countries.list.components.CountriesList
+import ua.oldev.graphqlcountries.countries.presentation.list.components.CountriesList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CountriesListScreen(
     modifier: Modifier = Modifier,
     state: CountriesListScreenState,
-    onCountrySelected: (String) -> Unit
+    onCountrySelected: (String) -> Unit,
+    onBackClick: () -> Unit
 ) {
     Scaffold(
         modifier = modifier,
         topBar = {
             TopAppBar(
-                title = { Text(text = "Countries") }
+                title = { Text(text = stringResource(id = R.string.countries_title)) }
             )
         }
     ) { innerPadding ->
@@ -47,7 +50,8 @@ private fun CountriesListScreenPreview() {
     GraphQlCountriesTheme {
         CountriesListScreen(
             state = CountriesListScreenState(countries = allCountries),
-            onCountrySelected = {}
+            onCountrySelected = {},
+            onBackClick = {}
         )
     }
 }

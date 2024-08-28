@@ -1,4 +1,4 @@
-package ua.oldev.graphqlcountries.countries.list.components
+package ua.oldev.graphqlcountries.countries.presentation.list.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

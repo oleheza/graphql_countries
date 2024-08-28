@@ -1,7 +1,7 @@
-package ua.oldev.graphqlcountries.countries.list
+package ua.oldev.graphqlcountries.countries.presentation.list
 
 import androidx.compose.runtime.Immutable
-import ua.oldev.graphqlcountries.core.domain.model.CountryListModel
+import ua.oldev.graphqlcountries.countries.domain.model.CountryListModel
 
 @Immutable
 data class CountriesListScreenState(

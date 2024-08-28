@@ -1,4 +1,4 @@
-package ua.oldev.graphqlcountries.core.domain.model
+package ua.oldev.graphqlcountries.countries.domain.model
 
 data class CountryListModel(
     val code: String,

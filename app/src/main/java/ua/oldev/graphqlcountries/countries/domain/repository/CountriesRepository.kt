@@ -1,4 +1,4 @@
-package ua.oldev.graphqlcountries.core.data.repository
+package ua.oldev.graphqlcountries.countries.domain.repository
 
 import ua.oldev.graphqlcountries.CountriesListQuery
 import ua.oldev.graphqlcountries.CountryDetailsQuery

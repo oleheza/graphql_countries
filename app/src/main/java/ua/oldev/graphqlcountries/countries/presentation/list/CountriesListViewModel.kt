@@ -1,5 +1,6 @@
-package ua.oldev.graphqlcountries.countries.list
+package ua.oldev.graphqlcountries.countries.presentation.list
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -8,13 +9,14 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import ua.oldev.graphqlcountries.core.data.repository.CountriesRepository
-import ua.oldev.graphqlcountries.core.domain.mappers.mapToListModel
-import ua.oldev.graphqlcountries.core.domain.model.CountryListModel
+import ua.oldev.graphqlcountries.countries.domain.mappers.mapToListModel
+import ua.oldev.graphqlcountries.countries.domain.model.CountryListModel
+import ua.oldev.graphqlcountries.countries.domain.repository.CountriesRepository
 import javax.inject.Inject
 
 @HiltViewModel
 class CountriesListViewModel @Inject constructor(
+    savedStateHandle: SavedStateHandle,
     private val countriesRepository: CountriesRepository
 ) : ViewModel() {
 

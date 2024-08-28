@@ -1,12 +1,13 @@
-package ua.oldev.graphqlcountries.core.domain.repository
+package ua.oldev.graphqlcountries.countries.data.repository
 
 import com.apollographql.apollo.ApolloClient
 import kotlinx.coroutines.CancellationException
 import ua.oldev.graphqlcountries.CountriesListQuery
 import ua.oldev.graphqlcountries.CountryDetailsQuery
-import ua.oldev.graphqlcountries.core.data.repository.CountriesRepository
+import ua.oldev.graphqlcountries.countries.domain.repository.CountriesRepository
+import javax.inject.Inject
 
-class CountriesRepositoryImpl(
+class CountriesRepositoryImpl @Inject constructor(
     private val apolloClient: ApolloClient
 ) : CountriesRepository {
     override suspend fun getAll(): Result<List<CountriesListQuery.Country>> {
