@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import ua.oldev.graphqlcountries.core.presentation.navigation.AppNavigation
-import ua.oldev.graphqlcountries.core.presentation.navigation.destinations.Countries
+import ua.oldev.graphqlcountries.core.presentation.navigation.destinations.Continents
 import ua.oldev.graphqlcountries.core.presentation.theme.GraphQlCountriesTheme
 
 @AndroidEntryPoint
@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
             GraphQlCountriesTheme {
                 AppNavigation(
                     navHostController = rememberNavController(),
-                    startDestination = Countries
+                    startDestination = Continents
                 )
             }
         }

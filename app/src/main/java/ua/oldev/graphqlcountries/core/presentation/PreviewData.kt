@@ -1,5 +1,7 @@
 package ua.oldev.graphqlcountries.core.presentation
 
+import ua.oldev.graphqlcountries.continents.domain.model.ContinentListModel
+import ua.oldev.graphqlcountries.countries.domain.model.CountryDetailsModel
 import ua.oldev.graphqlcountries.countries.domain.model.CountryListModel
 
 val ukraine = CountryListModel(
@@ -20,4 +22,12 @@ val newZealand = CountryListModel(
     name = "New Zealand"
 )
 
+val ukraineDetailed = CountryDetailsModel(
+    name = "Ukraine",
+    emoji = "\uD83C\uDDFA\uD83C\uDDE6",
+    capital = "Kyiv"
+)
+
 val allCountries = listOf(netherlands, newZealand, ukraine)
+
+val europe = ContinentListModel(name = "Europe", code = "EU")

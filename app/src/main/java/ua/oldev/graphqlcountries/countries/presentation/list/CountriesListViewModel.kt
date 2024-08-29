@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import ua.oldev.graphqlcountries.core.presentation.navigation.destinations.Countries.CONTINENT_CODE_KEY
 import ua.oldev.graphqlcountries.countries.domain.mappers.mapToListModel
 import ua.oldev.graphqlcountries.countries.domain.model.CountryListModel
 import ua.oldev.graphqlcountries.countries.domain.repository.CountriesRepository
@@ -19,6 +20,8 @@ class CountriesListViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val countriesRepository: CountriesRepository
 ) : ViewModel() {
+
+    private val continentCode = savedStateHandle.get<String>(CONTINENT_CODE_KEY).orEmpty()
 
     val state: StateFlow<CountriesListScreenState>
         get() = internalState.asStateFlow()
@@ -34,7 +37,7 @@ class CountriesListViewModel @Inject constructor(
         updateState(isLoading = true)
 
         viewModelScope.launch {
-            val result = countriesRepository.getAll()
+            val result = countriesRepository.getAllForContinent(continentCode)
 
             result.fold(
                 onSuccess = { countries ->

@@ -6,6 +6,8 @@ plugins {
     alias(libs.plugins.hilt)
 }
 
+val serverUrl = "https://countries.trevorblades.com/graphql"
+
 android {
     namespace = "ua.oldev.graphqlcountries"
     compileSdk = 34
@@ -21,7 +23,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildConfigField("String", "GRAPHQL_BASE_URL", "\"$serverUrl\"")
     }
+
+
 
     buildTypes {
         release {
@@ -41,6 +47,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -84,7 +91,7 @@ apollo {
     service("service") {
         packageName.set("ua.oldev.graphqlcountries")
         introspection {
-            endpointUrl.set("https://countries.trevorblades.com/graphql")
+            endpointUrl.set(serverUrl)
             schemaFile.set(file("src/main/graphql/schema.graphqls"))
         }
     }
